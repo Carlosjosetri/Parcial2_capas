@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.uca.capas.domain.Category;
 
 @Repository
-public class CategoryDAOImpl implements CategoryDAO {
+public class CategoryDAOIMPL implements CategoryDAO {
 
 	@PersistenceContext(unitName = "capas")
 	private EntityManager entityManager;
