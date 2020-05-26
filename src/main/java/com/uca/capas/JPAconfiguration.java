@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-public class JPAConfiguration {
+public class JPAconfiguration {
 	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
