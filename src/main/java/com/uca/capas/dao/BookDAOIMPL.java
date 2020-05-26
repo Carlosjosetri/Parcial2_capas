@@ -13,7 +13,7 @@ import com.uca.capas.domain.Category;
 import com.uca.capas.domain.Book;
 
 @Repository
-public class BookDAOImpl implements BookDAO{
+public class BookDAOIMPL implements BookDAO{
 
 	@PersistenceContext(unitName = "capas")
 	private EntityManager entityManager;
