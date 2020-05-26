@@ -10,28 +10,30 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import com.uca.capas.domain.Book;
-;
+import com.uca.capas.domain.Category;
 
 @Repository
-public class BookDAOIMPL implements BookDAO {
+public class CategoryDAOIMPL implements CategoryDAO {
 	
 	@PersistenceContext(unitName="Parcial2")
 	public EntityManager entityManager;
 
 	@Override
-	public List<Book> findAll() throws DataAccessException {
+	public List<Category> findAll() throws DataAccessException {
 		StringBuffer sb = new StringBuffer();
 
-		sb.append("SELECT * FROM PUBLIC.cat_libro;");
-		Query query = entityManager.createNativeQuery(sb.toString(),Book.class);
-		List <Book> result= query.getResultList();
+		sb.append("SELECT * FROM PUBLIC.cat_categoria;");
+		Query query = entityManager.createNativeQuery(sb.toString(),Category.class);
+		List <Category> result= query.getResultList();
 		return result;
 	}
 
 
+
+
 	@Override
-	public void insert(Book book) throws DataAccessException {
-		entityManager.persist(book);
+	public void insert(Category category) throws DataAccessException {
+		entityManager.persist(category);
 		
 	}
 

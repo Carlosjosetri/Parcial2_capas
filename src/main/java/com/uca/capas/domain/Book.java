@@ -41,4 +41,63 @@ public class Book {
 	@Column(name="f_ingreso")
 	private Date fechaIngreso;
 	
+	public Book() {}
+
+	public Integer getCodigoLibro() {
+		return codigoLibro;
+	}
+
+	public void setCodigoLibro(Integer codigoLibro) {
+		this.codigoLibro = codigoLibro;
+	}
+
+	public Category getCodigoCategoria() {
+		return codigoCategoria;
+	}
+
+	public void setCodigoCategoria(Category codigoCategoria) {
+		this.codigoCategoria = codigoCategoria;
+	}
+
+	public String getNombreContribuyente() {
+		return nombreContribuyente;
+	}
+
+	public void setNombreContribuyente(String nombreContribuyente) {
+		this.nombreContribuyente = nombreContribuyente;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getApellidoContribuyente() {
+		return apellidoContribuyente;
+	}
+
+	public void setApellidoContribuyente(String apellidoContribuyente) {
+		this.apellidoContribuyente = apellidoContribuyente;
+	}
+
+	public Boolean getNitContribuyente() {
+		return nitContribuyente;
+	}
+
+	public void setNitContribuyente(Boolean nitContribuyente) {
+		this.nitContribuyente = nitContribuyente;
+	}
+
+	public Date getFechaIngreso() {
+		return fechaIngreso;
+	}
+
+	public void setFechaIngreso(Date fechaIngreso) {
+		this.fechaIngreso = fechaIngreso;
+	}
+	
+	
 }
