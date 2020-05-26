@@ -1,5 +1,5 @@
 package com.uca.capas.domain;
-import java.sql.Date;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,79 +8,50 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(schema="public",name="cat_categoria")
+@Table(schema = "public", name = "cat_categoria")
 public class Category {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="cat_categoria")
-	private Integer codigoCategoria;
-	
-	@Column(name="s_categoria")
-	private String nombreCategoria;
-	
-	@OneToMany(mappedBy="codigoCategoria", fetch=FetchType.EAGER)//SI NO FUNCIONA, CAMBIAR A CONTRIBUYENTE
-	private List<Book> Books;
-	
-	
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "c_categoria")
+	public Integer codigoCategoria;
 	
+	@Column(name = "s_categoria")
+	@Size(message = "El campo sobrepasa la cantidad de 50 caracteres", max = 50)
+	@NotEmpty(message = "“El campo no puede estar vacío")
+	public String categoria;
 	
+	@OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER)
+	private List<Book> libros;
+
+	public Category() {}
+
+	public List<Book> getCategorias() {
+		return libros;
+	}
+
 	public Integer getCodigoCategoria() {
 		return codigoCategoria;
 	}
-
-
-
-
 
 	public void setCodigoCategoria(Integer codigoCategoria) {
 		this.codigoCategoria = codigoCategoria;
 	}
 
-
-
-
-
-	public String getNombreCategoria() {
-		return nombreCategoria;
+	public String getCategoria() {
+		return categoria;
 	}
 
-
-
-
-
-	public void setNombreCategoria(String nombreCategoria) {
-		this.nombreCategoria = nombreCategoria;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
-
-
-
-
-
-	public List<Book> getBooks() {
-		return Books;
-	}
-
-
-
-
-
-	public void setBooks(List<Book> books) {
-		Books = books;
-	}
-
-
-
-
-
-	public Category() {}
 	
-
+	
+	
 }
